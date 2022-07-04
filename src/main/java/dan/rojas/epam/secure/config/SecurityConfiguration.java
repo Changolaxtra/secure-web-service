@@ -37,13 +37,20 @@ public class SecurityConfiguration {
         .and()
         .authorizeRequests()
         .antMatchers("/about**").permitAll()
+        .and()
+        .authorizeRequests()
+        .antMatchers("/login.html**").permitAll()
         .and().authorizeRequests()
-        .antMatchers("/info**").hasAnyAuthority("VIEW_INFO", "VIEW_ADMIN")
+        .antMatchers("/info.html**").hasAnyAuthority("VIEW_INFO", "VIEW_ADMIN")
         .and().authorizeRequests()
         .antMatchers("/admin**").hasAuthority("VIEW_ADMIN")
         .and()
         .authorizeRequests()
-        .anyRequest().authenticated();
+        .anyRequest().authenticated()
+        .and().formLogin()
+        .loginPage("/login.html")
+        .failureUrl("/login-error.html")
+        .successForwardUrl("/");
     return http.build();
   }
 
