@@ -38,6 +38,11 @@ public class SecurityConfiguration {
         .authorizeRequests()
         .antMatchers("/about**").permitAll()
         .and().authorizeRequests()
+        .antMatchers("/info**").hasAnyAuthority("VIEW_INFO", "VIEW_ADMIN")
+        .and().authorizeRequests()
+        .antMatchers("/admin**").hasAuthority("VIEW_ADMIN")
+        .and()
+        .authorizeRequests()
         .anyRequest().authenticated();
     return http.build();
   }

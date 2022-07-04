@@ -15,6 +15,11 @@ INSERT INTO users (username, password, enabled)
     1);
 
 INSERT INTO authorities (username, authority)
-  values ('admin', 'VIEW_INFO');
-INSERT INTO authorities (username, authority)
   values ('admin', 'VIEW_ADMIN');
+
+
+-- User guest/pass
+INSERT INTO users (username, password, enabled)
+  values ('guest',
+    '$2a$10$8.UnVuG9HHgffUDAlk8qfOuVGkqRzgVymGe07xd00DMxs.AQubh4a',
+    1);
