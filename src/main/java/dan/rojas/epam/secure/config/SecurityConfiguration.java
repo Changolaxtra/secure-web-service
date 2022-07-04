@@ -33,8 +33,12 @@ public class SecurityConfiguration {
   public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
     http.userDetailsService(userDetailsService())
         .csrf().disable()
-        .authorizeRequests().anyRequest().authenticated()
-        .and().httpBasic();
+        .httpBasic()
+        .and()
+        .authorizeRequests()
+        .antMatchers("/about**").permitAll()
+        .and().authorizeRequests()
+        .anyRequest().authenticated();
     return http.build();
   }
 

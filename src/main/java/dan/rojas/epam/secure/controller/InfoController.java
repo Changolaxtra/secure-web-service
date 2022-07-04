@@ -16,4 +16,9 @@ public class InfoController {
   public Stats getStats() {
     return infoService.getRandomStats();
   }
+
+  @GetMapping("/about")
+  public String getAboutAbstract() {
+    return infoService.getAboutAbstract();
+  }
 }
