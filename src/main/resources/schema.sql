@@ -13,3 +13,12 @@ CREATE TABLE authorities (
 
 CREATE UNIQUE INDEX ix_auth_username
   ON authorities (username, authority);
+
+CREATE TABLE login_attempt (
+  username VARCHAR(50) NOT NULL,
+  attempts INT(2) NOT NULL,
+  locked BOOLEAN,
+  stamp TIMESTAMP,
+  PRIMARY KEY (username),
+  FOREIGN KEY (username) REFERENCES users(username)
+);

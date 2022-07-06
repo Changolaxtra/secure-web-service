@@ -1,4 +1,4 @@
-package dan.rojas.epam.secure.model;
+package dan.rojas.epam.secure.dto;
 
 import lombok.Builder;
 import lombok.Value;

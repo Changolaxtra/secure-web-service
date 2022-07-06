@@ -50,6 +50,7 @@ public class SecurityConfiguration {
         .and().formLogin()
         .loginPage("/login.html")
         .failureUrl("/login-error.html")
+        .failureForwardUrl("/login-error.html")
         .successForwardUrl("/");
     return http.build();
   }

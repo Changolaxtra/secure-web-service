@@ -1,7 +1,7 @@
 package dan.rojas.epam.secure.service;
 
 import dan.rojas.epam.secure.config.InfoConfig;
-import dan.rojas.epam.secure.model.Stats;
+import dan.rojas.epam.secure.dto.Stats;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
